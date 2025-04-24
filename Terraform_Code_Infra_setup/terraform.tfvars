@@ -1,0 +1,5 @@
+aws_region             = "us-east-1"
+github_repo_sub        = "repo:mrbalraj007/GitHub-Action-OIDCConnecto:*"
+web_identity_role_name = "github-actions-web-identity-role"
+web_identity_repo_sub  = "repo:mrbalraj007/GitHub-Action-OIDCConnecto:ref:refs/heads/main"
+additional_policy_arn  = "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
