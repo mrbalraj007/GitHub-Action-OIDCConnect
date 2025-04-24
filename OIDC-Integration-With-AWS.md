@@ -5,7 +5,7 @@ This repository share some best practices on GitHub Actions for AWS CICD tasks.
 
 # Streamlining AWS Integration with GitHub Actions: A Secure and Scalable Approach Using `OpenID Connect`
 
-![alt text](image-10.png)
+![alt text](All_ScreenShot/image-10.png)
 
 ## <span style="color: Yellow;"> Objective
 The project demonstrates how to integrate GitHub Actions with AWS to automate workflows, such as uploading Docker images to AWS Elastic Container Registry (ECR). 
@@ -133,20 +133,20 @@ Now, run the following command.
     # Optional <terraform apply --auto-approve>
     ```
 -------
-![alt text](image.png)
+![alt text](All_ScreenShot/image.png)
 
 Once you run the terraform command, then we will verify the following things to make sure everything is setup properly via a terraform.
 
 - Verify OpenID Connect as an identity provider in AWS.
- ![alt text](image-1.png)
+ ![alt text](All_ScreenShot/image-1.png)
 
 - Verify Assign a role and permission to the identity provider with specific permissions.
-![alt text](image-2.png)
-![alt text](image-3.png)
+![alt text](All_ScreenShot/image-2.png)
+![alt text](All_ScreenShot/image-3.png)
 
 - Update secrets and variables in GitHub Actions workflow to use the role's ARN for authentication.
-![alt text](image-4.png)
-![alt text](image-5.png)
+![alt text](All_ScreenShot/image-4.png)
+![alt text](All_ScreenShot/image-5.png)
 
 - Ensure the workflow file includes the required permissions block for OIDC.
 - Here is the 🗎 [Updated YAML]()file for OIDC.
@@ -154,9 +154,9 @@ Once you run the terraform command, then we will verify the following things to 
 **Testing**
 
 - Run the GitHub Actions workflow to verify AWS authentication and operations.
-  ![alt text](image-6.png)
-  ![alt text](image-7.png)
-  ![alt text](image-8.png)
+  ![alt text](All_ScreenShot/image-6.png)
+  ![alt text](All_ScreenShot/image-7.png)
+  ![alt text](All_ScreenShot/image-8.png)
 - Debug and fix any errors, such as missing permissions or incorrect configurations.
 
 
@@ -167,7 +167,7 @@ Once you run the terraform command, then we will verify the following things to 
        ```sh
          terraform destroy --auto-approve
        ```
-![alt text](image-9.png)
+![alt text](All_ScreenShot/image-9.png)
 
 ## **Conclusion**
 The project highlights the advantages of using OpenID Connect over manual access keys for integrating GitHub Actions with AWS. OIDC provides a more secure, scalable, and maintenance-free solution, making it the recommended approach for real-world applications. By adopting OIDC, teams can focus on building and deploying applications without worrying about credential management.
