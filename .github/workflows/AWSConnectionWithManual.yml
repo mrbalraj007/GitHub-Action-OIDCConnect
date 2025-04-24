@@ -1,0 +1,35 @@
+name: AWS OIDC Connect Demo GA
+on:
+ push:
+   branches:
+      - main
+
+# permissions:
+#       id-token: write
+#       contents: read
+jobs:
+  check-access:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+
+      - name: Debug - Show GitHub context
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-region: ${{ vars.AWS_REGION }}
+          
+      - name: Verify assumed role
+        run: aws sts get-caller-identity
+
+      - name: Try accessing AWS resources
+        run: |
+          echo "Listing S3 buckets:"
+          aws s3 ls || echo "Failed to list S3 buckets"
