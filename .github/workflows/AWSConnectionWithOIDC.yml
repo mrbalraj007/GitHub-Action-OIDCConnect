@@ -30,7 +30,7 @@ jobs:
         run: aws sts get-caller-identity
 
 
-  # DemoOIDC:
+  # # DemoOIDC:
   #   runs-on: ubuntu-latest
   #   steps:
   #     - name: Git clone the repository
