@@ -164,7 +164,7 @@ Once you run the terraform command, then we will verify the following things to 
 ## <span style="color: Yellow;"> Environment Cleanup:
 
 ### <span style="color: cyan;"> To delete ```OIDC, Roles and Permissions```
-   -   Go to directory `GitHub-Action-OIDCConnect/Terraform_Code_Infra_setupand` and run the following command to delete the cluster.
+   -   Go to directory `GitHub-Action-OIDCConnect/Terraform_Code_Infra_setup` and and run the following command to delete the cluster.
        ```sh
          terraform destroy --auto-approve
        ```
