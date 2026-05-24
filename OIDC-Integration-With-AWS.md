@@ -51,10 +51,11 @@ Before diving into this project, here are some skills and tools you should be fa
         ```
 - **Test and verify with curl again in powershell terminal:**
     ```powershell
-    $headers = @{
-        Authorization = "token $env:TF_VAR_github_token"
-    }
-    Invoke-WebRequest -Uri "https://api.github.com/user" -Headers $headers
+  $headers = @{ Authorization = "token $env:TF_VAR_github_token" }; Invoke-WebRequest -Uri "https://api.github.com/user" -Headers $headers
+
+  or 
+
+  (Invoke-WebRequest -Uri "https://api.github.com/user" -Headers $headers).Content
     ```
    - You should see your GitHub user info in JSON, **not** "Bad credentials".
 ---
